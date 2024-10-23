@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="digitalClock.css">
+</head>
+<body>
+    <div class="main">
+       <div class="container">
+
+        <div class="clock">
+            <span id="hours">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+        </div>
+
+
+       </div>
+    </div>
+    
+    <script>
+        let hrs = document.getElementById("hours");
+        let min = document.getElementById("min");
+        let sec = document.getElementById("sec");
+        let clock = document.getElementsByClassName("clock");
+       
+    
+     setInterval(()=>{
+
+        let currentTime = new Date();
+        hrs.innerHTML = ( currentTime.getHours()<10?"0":"") + currentTime.getHours();
+        min.innerHTML = (currentTime.getMinutes()<10?"0":"") + currentTime.getMinutes();
+        sec.innerHTML = (currentTime.getSeconds()<10?"0":"") +currentTime.getSeconds();
+      
+
+     },1000)
+/*
+   saveData()
+      
+     function saveData(){
+   localStorage.setItem("clock",clock.innerHTML);
+   localStorage.setItem("clock",min.innerHTML);
+   localStorage.setItem("clock",sec.innerHTML);
+}
+*/
+     
+      
+    </script>
+</body>
+</html>
